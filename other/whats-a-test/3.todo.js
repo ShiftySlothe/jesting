@@ -27,6 +27,15 @@ Then run this code with `node 3.todo`
 
 const {sum, subtract} = require('./math')
 
+const test = (title, callback) => {
+  try {
+    callback();
+    console.log(`Yep, ${title}`)
+  } catch(error) {
+    console.log(`Nope, ${title} error: ${error}`)
+  }
+
+}
 let result, expected
 
 result = sum(3, 7)

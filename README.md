@@ -1,47 +1,36 @@
 # Testing Workshop
 
-👋 hi there! My name is [Kent C. Dodds](https://kentcdodds.com)! This is a
-workshop repo to teach you about testing JavaScript applications.
+👋 hi there! This is a workshop I completed hosted by [Kent C. Dodds](https://kentcdodds.com)!
 
-> **NOTICE**: If you're coming here from
-> [my Frontend Masters 2017 workshop](https://frontendmasters.com/courses/testing-javascript/),
-> I recommend you watch [the updated 2018 workshop instead](https://frontendmasters.com/courses/testing-react/).
-> If you'd rather follow the 2017 workshop, then please
-> [go to the `fem` branch](https://github.com/kentcdodds/testing-workshop/tree/fem)
-> to make sure you're looking at the accurate information for your workshop.
+## Areas of focus
 
-[![chat-badge][chat-badge]][chat]
-[![Build Status][build-badge]][build]
-[![AppVeyor Build Status][win-build-badge]][win-build]
-[![Code Coverage][coverage-badge]][coverage]
-[![License][license-badge]](#license)
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
+* Unit testing fundatmentals
+* Intergration testing fundamentals
+* Jest
 
-[![PRs Welcome][prs-badge]][prs]
-[![Code of Conduct][coc-badge]][coc]
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
-[![Tweet][twitter-badge]][twitter]
+Further details on the contents of the workshop can be found below.
 
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Topics covered](#topics-covered)
-- [Branches](#branches)
-- [System Requirements](#system-requirements)
-- [Setup](#setup)
-- [Running the app](#running-the-app)
-- [About the app](#about-the-app)
-  - [Continuous Integration](#continuous-integration)
-  - [Hosting](#hosting)
-  - [Register and Login](#register-and-login)
-- [Troubleshooting](#troubleshooting)
-- [Structure](#structure)
-- [Contributors](#contributors)
-- [LICENSE](#license)
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+* [Topics covered](#topics-covered)
+* [Branches](#branches)
+* [System Requirements](#system-requirements)
+* [Setup](#setup)
+* [Running the app](#running-the-app)
+* [About the app](#about-the-app)
+  * [Continuous Integration](#continuous-integration)
+  * [Hosting](#hosting)
+  * [Register and Login](#register-and-login)
+* [Troubleshooting](#troubleshooting)
+* [Structure](#structure)
+* [Contributors](#contributors)
+* [LICENSE](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -69,13 +58,13 @@ want to switch to the appropriate branch for this workshop. Otherwise the code
 you're looking at may not be exactly the same as the code used in the setting
 you're working with.
 
-- Frontend Masters 2017 [`fem`](https://github.com/kentcdodds/testing-workshop/tree/fem)
+* Frontend Masters 2017 [`fem`](https://github.com/kentcdodds/testing-workshop/tree/fem)
 
 ## System Requirements
 
-- [git][git] v2.14.1 or greater
-- [NodeJS][node] v8.9.4 or greater
-- [npm][npm] v5.6.0 or greater
+* [git][git] v2.14.1 or greater
+* [NodeJS][node] v8.9.4 or greater
+* [npm][npm] v5.6.0 or greater
 
 All of these must be available in your `PATH`. To verify things are set up
 properly, you can run this:
@@ -144,8 +133,8 @@ generated).
 
 We're using two CI services:
 
-- [Travis][build] (Linux): find config in `.travis.yml`
-- [AppVeyor][win-build] (Windows): find config in `appveyor.yml`
+* [Travis][build] (Linux): find config in `.travis.yml`
+* [AppVeyor][win-build] (Windows): find config in `appveyor.yml`
 
 ### Hosting
 
@@ -268,6 +257,7 @@ able to leave you command line in the root directory for the whole workshop.
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
@@ -288,6 +278,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

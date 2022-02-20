@@ -10,21 +10,18 @@ import * as utils from '../utils'
 // )
 //
 // (Hint #1)
+  jest.mock('../utils', () => { 
+    return {
+    getWinner: jest.fn((p1, p2) => p2),
+  }})
 
 test('returns winner', () => {
-  // remove the next two lines
-  jest.spyOn(utils, 'getWinner')
-  utils.getWinner.mockImplementation((p1, p2) => p2)
-
   const winner = thumbWar('Ken Wheeler', 'Kent C. Dodds')
   expect(winner).toBe('Kent C. Dodds')
   expect(utils.getWinner).toHaveBeenCalledTimes(2)
   utils.getWinner.mock.calls.forEach(args => {
     expect(args).toEqual(['Ken Wheeler', 'Kent C. Dodds'])
   })
-
-  // remove the next line
-  utils.getWinner.mockRestore()
 })
 
 /*

@@ -53,5 +53,17 @@ async function updateUser(req, res) {
 // 3. Delete the user
 // 4. Send the user back (use userToJSON)
 // Don't forget! It needs to be an async function, and you need to add it to the list of exports below.
+async function deleteUser(req, res) { 
+  
+  if (!req.user || req.user.id !== req.params.id) {
+    return res.status(403).send()
+  } 
+  const user = await db.getUser(req.params.id)
+  if(!user) {
+    return res.status(404).send()    
+  }
 
-export {getUsers, getUser, updateUser, authorize}
+  await db.deleteUser(req.user.id)
+  return(res.json({user: userToJSON(user)}))
+} 
+export {getUsers, getUser, updateUser, authorize, deleteUser}

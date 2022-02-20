@@ -21,3 +21,7 @@ error if the subtract function were to have a bug
 // sum is intentionally broken so you can see errors in the tests
 const sum = (a, b) => a - b
 const subtract = (a, b) => a - b
+
+if (sum( 1 + 2 ) != 3) {
+  throw new Error("Sum's not working!");
+}

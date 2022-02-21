@@ -19,17 +19,17 @@
 // back from the resetDb call.
 //
 // Then you could write a general CRUD test:
-import axios from "axios"
-import {generate, resetDB} from "til-shared/generate";
-import { getUserToken } from "../../utils/auth"
-import startServer from "../../start"
+import axios from 'axios'
+import {generate, resetDB} from 'til-shared/generate'
+import {getUserToken} from '../../utils/auth'
+import startServer from '../../start'
 
 jest.unmock('axios')
 
 const getData = res => res.data
 const getPost = res => res.data.post
 
-let server, baseURL, api, authAPI, mockData, testUser 
+let server, baseURL, api, authAPI, mockData, testUser
 
 beforeAll(async () => {
   server = await startServer({port: 8798})
@@ -66,7 +66,9 @@ test('postCRUD', async () => {
   //   a. create a new title with `generate.title()`
   const updates = {updates: generate.title()}
   //   b. send a POST request to the posts/:id endpoint with your test post's ID and an updates object
-  const testUpdate = await authAPI.post(`posts/${testPost.id}`, updates).then(getPost)
+  const testUpdate = await authAPI
+    .post(`posts/${testPost.id}`, updates)
+    .then(getPost)
 
   //   c. that should give you back an updated post, verify that has the updated title
   expect(testUpdate).toMatchObject({updates})
@@ -74,8 +76,7 @@ test('postCRUD', async () => {
   //   a. send a DELETE request to the posts/:id endpoint with your test post's ID
   //   b. verify the returned post matches your test post
   //   c. Attempt to make a GET request to read the post and ensure that request fails with a 404 status code
-  
-}) 
+})
 //////// Elaboration & Feedback /////////
 // When you've finished with the exercises:
 // 1. Copy the URL below into your browser and fill out the form

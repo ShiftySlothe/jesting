@@ -1,7 +1,7 @@
-import { isPasswordAllowed, userToJSON} from "../auth";
+import {isPasswordAllowed, userToJSON} from '../auth'
 
 test('isPasswordAllowed only allows some passwords', () => {
-    const allowedPasswords = []
+  const allowedPasswords = []
   const disallowedPasswords = []
 
   allowedPasswords.forEach(password => {

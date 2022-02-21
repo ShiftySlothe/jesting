@@ -1,6 +1,6 @@
 import {initDb, generate} from 'til-server-test-utils'
 import {omit} from 'lodash'
-import db from '../../utils/db';
+import db from '../../utils/db'
 import * as userController from '../users.todo'
 
 function setup() {
@@ -33,23 +33,20 @@ function setup() {
 beforeEach(() => initDb())
 const safeUser = u => omit(u, ['salt', 'hash'])
 test('getUsers returns all users in the DB', async () => {
-
   const req = {}
   const res = {
     json: jest.fn(),
   }
   await userController.getUsers(req, res)
   expect(res.json).toHaveBeenCalledTimes(1)
-
 })
 
 test('deleteUser only allows the user to delete account, returns 403', async () => {
-  
   const newUser = await db.insertUser(generate.userData())
   const {req, res} = setup()
-  req.params = {id: newUser.id }
+  req.params = {id: newUser.id}
   req.user = newUser
-  req.user.id = "WrongId"
+  req.user.id = 'WrongId'
 
   await userController.deleteUser(req, res)
 
@@ -65,12 +62,12 @@ test('deleteUser, if no user exists, return 404', async () => {
   const {req, res} = setup()
   const nonExistantId = generate.id()
   req.params = {id: nonExistantId}
-  req.user = { id: nonExistantId}
+  req.user = {id: nonExistantId}
   await userController.deleteUser(req, res)
 
   expect(res.json).not.toHaveBeenCalled()
   expect(res.status).toHaveBeenCalledTimes(1)
-  expect(res.status).toHaveBeenLastCalledWith(404)  
+  expect(res.status).toHaveBeenLastCalledWith(404)
   expect(res.send).toHaveBeenCalledTimes(1)
 })
 

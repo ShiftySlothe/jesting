@@ -63,13 +63,13 @@ async function updatePost(req, res) {
 // Don't forget! It needs to be an async function, and you need to add it to the list of exports below.
 async function deletePost(req, res) {
   const post = await db.getPost(req.params.id)
-  if(!post) {
+  if (!post) {
     return res.status(404).send()
   }
-  if(!req.user || req.user.id !== post.authorId) {
+  if (!req.user || req.user.id !== post.authorId) {
     return res.status(403).send()
   }
   const deletedPost = await db.deletePost(req.params.id)
-  return res.json({post: deletedPost});
+  return res.json({post: deletedPost})
 }
 export {authorize, getPosts, getPost, createPost, updatePost, deletePost}
